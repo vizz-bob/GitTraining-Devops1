@@ -1,0 +1,287 @@
+Industry Grade Project : 
+Edureka
+https://github.com/salwad-basha-shaik/final-devops-project
+
+Solution from website : https://medium.com/@DaalA/building-a-ci-cd-pipeline-for-a-retail-company-b7d70885651b
+
+
+Git hub token 29th October 24
+
+YOUTUBE
+
+DevOps Interview Questions and Answers for Freshers and Experienced in 2024
+ 
+Cloud Champ
+
+
+https://www.youtube.com/watch?v=CW_3D1tL3_I
+Follow this for AWS training
+
+ 
+
+
+https://mxtoolbox.com/subnetcalculator.aspx
+
+AWS private and public subnet : 
+https://www.youtube.com/watch?v=9NWTcumxf-4
+
+NAT Gateway : 
+https://www.youtube.com/watch?v=ydxEeVAqVdo
+
+
+To ignore file in git create : vi .gitignore
+
+GIT Token : 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
+
+GIT STASH – GIT STASH POP 
+
+git push git@github.com: Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.
+ChatGPT said:
+ChatGPT
+The error message you're seeing indicates that Git is unable to authenticate with GitHub due to an issue with your SSH key. Here are some steps to troubleshoot and resolve the problem:
+1.	Check if you have an SSH key: Run the following command to see if you already have an SSH key:
+bash
+Copy code
+ls -al ~/.ssh
+You should see files like id_rsa and id_rsa.pub. If you don't see them, you'll need to generate a new SSH key.
+2.	Generate a new SSH key (if necessary): If you don't have an SSH key, you can create one with:
+bash
+Copy code
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Press Enter to accept the default file location and provide a passphrase if desired.
+3.	Add your SSH key to the SSH agent: Start the SSH agent and add your SSH key:
+bash
+Copy code
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+4.	Add your SSH key to GitHub: Copy the contents of your public key to your clipboard:
+bash
+Copy code
+cat  ~/.ssh/id_rsa.pub
+Then, go to GitHub:
+o	Navigate to Settings.
+o	Click on SSH and GPG keys.
+o	Click New SSH key, paste your key, and save.
+5.	Test your connection: Run the following command to check if your SSH key is set up correctly:
+bash
+Copy code
+ssh -T git@github.com
+You should see a message like "Hi username! You've successfully authenticated..."
+6.	Check your remote URL: Ensure that your Git remote URL is set to use SSH. You can check it with:
+bash
+Copy code
+git remote -v
+If it shows an HTTPS URL, change it to SSH with:
+bash
+Copy code
+git remote set-url origin git@github.com:username/repo.git
+USE this if not working :
+git remote add origin git@github.com:vizz-bob/GitTraining-Devops1
+git remote -v
+git remote add origin git@github.com:vizz-bob/GitTraining-Devops1
+git fetch origin
+git merge origin/master --allow-unrelated-histories
+git push -u origin master
+After following these steps, try to push again with git push. If you still encounter issues, feel free to ask for more help!
+
+
+git reset --soft <commitid>
+
+git reset --soft acae543
+git log --oneline
+git status
+git restore –-stage filename
+git reset –hard <commitID>
+
+git ubuntu not able to push 
+get apt update
+apt update
+ls
+sudo apt update
+sudo apt upgreade
+sudo apt upgrade
+sudo apt full upgrade
+sudo apt full-upgrade
+sudo apt autoremove
+sudo reboot
+.bash_logout
+# ~/.bash_logout: executed by bash(1) when login shell exits.
+
+# when leaving the console clear the screen to increase privacy
+
+if [ "$SHLVL" = 1 ]; then
+    [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
+Fi
+
+Steps to Fix the Issue
+1.	Fetch the Latest Changes: First, fetch the latest changes from the remote repository:
+bash
+Copy code
+git fetch origin
+2.	Merge or Rebase Changes: Next, you have two options: merge or rebase the changes from the remote branch into your local branch.
+Option A: Merge
+o	This will create a new merge commit if there are changes on both sides.
+bash
+Copy code
+git merge origin/master
+Option B: Rebase
+o	This will apply your local changes on top of the latest changes from the remote.
+bash
+Copy code
+git rebase origin/master
+Choose one of these options based on your workflow preference.
+3.	Resolve Any Merge Conflicts (if necessary): If there are any conflicts during the merge or rebase, Git will notify you. You will need to resolve these conflicts manually, then stage the changes:
+bash
+Copy code
+git add <file-with-conflict>
+After resolving conflicts during a rebase, continue with:
+bash
+Copy code
+git rebase --continue
+4.	Push Your Changes: Once your local branch is up to date with the remote, you can push your changes:
+bash
+Copy code
+git push origin master
+
+Delete all git file 
+	git rm -r *
+	git commit -m "Delete all files"
+	git push origin master
+
+
+script for launching the AWS EC2
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d' ' -f1)</p>" | sudo /var/www/html/index.html
+sudo systemctl restart apache2
+chmod +x setup_apache.sh
+./setup_apache.sh
+
+sudo apt update
+sudo apt install apache2
+echo "<h1>Server Details</h1><p><strong>Hostname:</strong> $(hostname)</p><p><strong>IP Address:</strong> $(hostname -I | cut -d' ' -f1)</p>" | sudo /var/www/html/index.html
+sudo systemctl restart apache2
+
+
+ 
+
+EC2: Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster.
+What is a Load Balancer: The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. This increases the availability of your application.
+VPC: Amazon Virtual Private Cloud (Amazon VPC) enables you to launch Amazon Web Services resources into a virtual network you've defined. This virtual network resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
+Subnet: A subnet is a range of IP addresses in your VPC. You launch AWS resources, such as Amazon EC2 instances, into your subnets. You can connect a subnet to the internet, other VPCs, and your own data centers, and route traffic to and from your subnets using route tables.
+Internet Gateway: An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. It supports IPv4 and IPv6 traffic.
+Route Table: In Amazon Web Services (AWS), a route table is a set of rules that determine how traffic is directed within a Virtual Private Cloud (VPC). Route tables contain rules, known as routes, that specify which network traffic is directed to which network interface.
+Peering Connection: A VPC peering connection is a networking connection between two VPCs that enables routing using each VPC's private IP address as if they were in the same network. VPC peering connections can be created between your own VPCs or with a VPC in another AWS account. VPC peering also supports inter-region peering.
+So we need to follow the steps to establish a load balancer between Two VPC.
+1.	Create Two VP C's i.e. VPC1 and VPC2
+2.	Create TWO Subnet in VPC1 and one in VPC2
+3.	Create Internet Gateway for VPC1 and VPC2
+4.	Edit Route Table and add 0.0.0.0/0
+5.	Create Peering Connection, and Update Route Table.
+6.	Create Three EC2 instances (Windows Server 2016) one in each subnet.
+7.	Install WEB Server IIS and create a webpage.
+8.	Create Application Load Balancer (ALB), Target Type=IP
+9.	Registered Private IPs of EC2's in Target Groups
+10.	Copy the DNS of the load balancer and paste in the web browser.
+Test your ALB to ensure that traffic is being distributed correctly between instances in different VPCs.
+Step 1: Create TWO VPC
+Go to AWS Console type in the search box "VPC" and select Create VPC.
+ 
+ 
+ 
+      
+ 
+ 
+Create another instance VPC1-SERVER2 with the same configuration and select the existing security group
+after that create a third ec2 instance with the VPC2-SERVER name and select VPC2 and Subnet for VPC2
+ 
+ 
+ 
+ 
+After that select instances one by one copy their Private IP address and paste it on one notepad file.
+ 
+ 
+ 
+After that select VPC1-SERVER1 and click to connect.
+ 
+Then download the Remote Desktop file. Then Click on Get Password --> Select downloaded .pem key file (mynewkey.pem) and generate a password. and then open the VPC1-SERVER1.rdp file and paste the password
+ 
+ 
+ 
+ 
+ 
+Do all these steps with other remaining instances and open the Windows server
+ 
+Install the IIS web server on Every Machine with the same steps
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+After That
+Go to Server1 and delete the files from C:\inetpub\wwwroot this path Create a new text file and write "SERVER 1 VPC 1 HELLO EVERYONE FROM LONDON" and save it as index.html
+Then Go to Server2 and delete the files from C:\inetpub\wwwroot this path create a new text file and write "SERVER 2 VPC 1 HELLOW EVERYONE FROM INDIA" and save it as index.html
+Then Go to the VPC2 server and delete files from C:\inetpub\wwwroot this path creates a new text file and write "DIFFERENT VPC 2 FROM RUSSIA" and save it as index.html
+Close all three servers and create a load balancer that create Application Load Balancer
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Finally, Select Load Balancer, Copy "DNS name" paste it in the browser and refresh it.
+See, All servers are running and the Load Balancer balances the load on the server of Two VPCs.
+Thats It !!!
+ 
+Subscribe to my newsletter
+Read articles from Sunil Thorat directly inside your inbox. Subscribe to the newsletter, and don't miss out.
+Subscribe
+AWSvpcLoad Balancingsubnet
+Written by
+  
+Sunil Thorat
+I'm Sunil Thorat, an enthusiastic DevOps Engineer with a passion for technology and problem-solving. With a strong foundation in supporting applications and a keen interest in DevOps tools, I thrive on ensuring seamless operations and top-notch user experiences. My journey has led me to delve into the realm of AWS cloud engineering, where I leverage my skills to optimize cloud solutions and enhance scalability. Eager to explore new challenges and contribute to innovative projects, I'm dedicated to continuous learning and staying updated with the latest trends in DevOps and cloud technologies.
+Follow
+ 
+More articles
+  
+Sunil Thorat
+ 
+AWS Project
+Steps for this Project:----> Step 1. A high-level look at the pipeline we’re building Step 2. How mu…
+  
+Sunil Thorat
+ 
+Jenkins Pipeline Script Tutorial
+Complete the CI CD Pipeline Project with the help of Groovy Syntax ---> Tools Used In This Project -…
+  
+Sunil Thorat
+ 
+Real-Time DevOps Project | Deploy to Kubernetes Using Jenkins | End-to-End DevOps Project | CICD
+Project Description Build a complete CI/CD pipeline using Jenkins, Maven, Docker, and the Elastic Ku…
+©2024 Sunil Thorat
+Archive·Privacy policy·Terms
+Google Cloud : 
+
+Instance configuration link change the external ip from the link http://34.45.50.12:8080/
+
+ 
+
